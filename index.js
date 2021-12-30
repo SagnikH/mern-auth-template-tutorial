@@ -19,7 +19,7 @@ app.use(
 		origin: [
 			"http://localhost:3000",
 			"https://mern-auth-template-tutorial.netlify.app",
-			"https://priceless-darwin-d1b295.netlify.app/",
+			"https://priceless-darwin-d1b295.netlify.app",
 		],
 		credentials: true,
 	})
