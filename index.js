@@ -15,27 +15,28 @@ app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://mern-auth-template-tutorial.netlify.app",
-    ],
-    credentials: true,
-  })
+	cors({
+		origin: [
+			"http://localhost:3000",
+			"https://mern-auth-template-tutorial.netlify.app",
+			"https://priceless-darwin-d1b295.netlify.app/",
+		],
+		credentials: true,
+	})
 );
 
 // connect to mongoDB
 
 mongoose.connect(
-  process.env.MDB_CONNECT,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  (err) => {
-    if (err) return console.error(err);
-    console.log("Connected to MongoDB");
-  }
+	process.env.MDB_CONNECT,
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	},
+	(err) => {
+		if (err) return console.error(err);
+		console.log("Connected to MongoDB");
+	}
 );
 
 // set up routes
